@@ -20,9 +20,23 @@ A feature extraction module
 
 ## SpherePHD: Applying CNNs on a Spherical PolyHeDron Representation of 360 Images
 ##### Research Question
-How to solve the difficulty of projection distortion issue when applying CNN in omni-directional images failing to extract meaningful information?
+How to solve the difficulty of projection distortion and discontinuity issues when applying CNN in omni-directional images failing to extract meaningful information?
 ##### Motivation
-1. The input of convolutional neural networks are usually represented in the Euclidean space, however, the original representation of omni-directional images are in non-Euclidean space, which result in the spatial distortion when we want to transform the representtaion type.
-2. discontinuity
+1. The input of convolutional neural networks are usually represented in the Euclidean space, however, the original representation of omni-directional images are in non-Euclidean space, which result in the spatial distortion when we want to transform the representtaion type in Euclidean like ERP.
+2. The transformation from non-Euclidean space to Euclidean space result in the continuity and cyclical properties disappearance. Even though, the cube map representation can somehow alleviate the distortion issue, it is still difficult to extract uniform locality information on the top and bottom faces because the top and bottom faces of cube map are orthogonal to the other faces.
 ##### Method
+- Data Structure
+
+  **Project the omni-directional image onto an icosahedral spherical polyhedron**
+
+<img src="Snipaste_2022-09-08_20-53-08.png" width="60%" />
+
+  - **Why this representation ?**
+  
+    Because it has far less irregularity on an input image.
+    
+    Here, the paper defines the average effective area of all the pixels as 
+  
+- Convolution layer
+- Pooling layer
 ##### Good Expression
